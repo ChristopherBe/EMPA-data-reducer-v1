@@ -59,7 +59,7 @@ class Minerals():
         self.Ca = Ca
         self.dival = MgFe + Ca
 
-    @property  # decorator sets method as attribute
+    @property  # decorator sets method as attribute.
     def get_min(self):
         oxides = sample_o
         oxides = oxides.loc[(oxides.SiO2 < self.Si_max) & (
@@ -80,7 +80,7 @@ unknown = sample_o.loc[~sample_o.index.isin(ol.get_min.index
                                            | grt.get_min.index
                                            | opx.get_min.index)]
 
-# get number of copied data sets for each sheet
+# get number of copied data sets for each sheet.
 ol_len = len(ol.get_min.index) - 2
 grt_len = len(grt.get_min.index) - 2
 opx_len = len(opx.get_min.index) - 2
