@@ -7,7 +7,6 @@ import pandas as pd
 import os
 
 pd.options.mode.chained_assignment = None  # default='warn'
-
 src = input("Paste source file address with \ replaced by /: ")
 dest = input("Specify source folder for output: ")
 sample = input("Please specify the sample you want to analyze: ")
@@ -77,6 +76,12 @@ ol = Minerals(41, 38, 55, 0, 0)
 grt = Minerals(54, 39, 10, 5, 1)
 opx = Minerals(60, 50, 40, 0, 0)
 qtz = Minerals(100, 95, 0, 0, 0)
+
+# removes strings from index to supress warnings
+#ol_index = list(filter(lambda x: isinstance(x, int), ol.get_min.index))
+#grt_index = list(filter(lambda x: isinstance(x, int), grt.get_min.index))
+#opx_index = list(filter(lambda x: isinstance(x, int), opx.get_min.index))
+#qtz_index = list(filter(lambda x: isinstance(x, int), qtz.get_min.index))
 
 unknown = sample_o.loc[~sample_o.index.isin(ol.get_min.index
                                            | grt.get_min.index
